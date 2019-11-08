@@ -2,16 +2,18 @@ package ru.itpark.domain;
 
 public class Product {
     private int id;
+    private String name;
     private String category;
     private int quantity;
     private int status;
     private int price;
 
-    public Product(int id, String category, int quantity, int availableToOrder, int price) {
+    public Product(int id, String name, String category, int quantity, int status, int price) {
         this.id = id;
+        this.name = name;
         this.category = category;
         this.quantity = quantity;
-        this.status = availableToOrder;
+        this.status = status;
         this.price = price;
     }
 
@@ -21,6 +23,14 @@ public class Product {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getCategory() {
@@ -59,6 +69,7 @@ public class Product {
     public String toString() {
         return "Product{" +
                 "id=" + id +
+                ", name='" + name + '\'' +
                 ", category='" + category + '\'' +
                 ", quantity=" + quantity +
                 ", status=" + status +
